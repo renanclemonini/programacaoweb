@@ -1,0 +1,21 @@
+create database SENAI_PW;
+use SENAI_PW;
+create table CLIENTE(
+	id int not null auto_increment,
+    nome varchar(100) not null,
+    idade smallint null,
+    cpf bigint  not null unique,
+    primary key(id)
+);
+create table PRODUTO(
+	id int not null auto_increment,
+    nome varchar(100) not null,
+    quantidade int null default 1,
+    valor numeric(9,2) not null,
+    primary key(id)
+);
+create table TURMAS(
+	id int not null auto_increment,
+    id_ESCOLA INT NOT NULL,
+    ID_PROFESSOR INT NO
+);
