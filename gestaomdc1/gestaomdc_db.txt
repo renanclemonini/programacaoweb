@@ -1,0 +1,30 @@
+create database gestaomdc;
+use gestaomdc;
+create table clientes(
+	id int not null auto_increment,
+    nome varchar(50) not null,
+    telefone varchar(20) not null unique,
+    aniversario varchar(12) not null,
+    primary key(id)
+);
+
+INSERT INTO clientes (nome, telefone, aniversario) VALUES ('Renan Clemonini','(71)99633-3313','10/08/1993');
+
+create table servicos(
+	id int not null auto_increment,
+    nome varchar(255) not null,
+    primary key(id)
+);
+
+create table agendamentos(
+	id int not null auto_increment,
+    nomeCliente varchar(50),
+    nomeServico varchar(30) not null,
+    dataAgendamento date not null,
+    horarioAgendamento time not null,
+    primary key(id)
+);
+
+drop table agendamentos;
+
+select * from servicos;
