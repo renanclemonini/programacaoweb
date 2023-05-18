@@ -18,13 +18,13 @@ create table servicos(
 
 create table agendamentos(
 	id int not null auto_increment,
-    nomeCliente varchar(50),
-    nomeServico varchar(30) not null,
+    idCliente int not null,
+    idServico int not null,
     dataAgendamento date not null,
     horarioAgendamento time not null,
-    primary key(id)
+    primary key(id),
+    constraint fk_agendamentos_cliente foreign key(idCliente) references clientes(id),
+    constraint fk_agendamentos_servico foreign key(idServico) references servicos(id)
 );
 
-drop table agendamentos;
 
-select * from servicos;
